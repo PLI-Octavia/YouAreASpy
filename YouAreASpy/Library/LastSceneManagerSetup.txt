@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scene/Entrainement.unity
+  isLoaded: 1
+  isActive: 1
