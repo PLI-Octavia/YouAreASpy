@@ -60,8 +60,8 @@ public class SpawnScript : MonoBehaviour {
             EgalChild.transform.position = new Vector3((transform.position.x + 4.8f), transform.position.y, 0.0f);
 
             
-            GameManagement.Instance.result = calcul.x * calcul.y;
-            Debug.Log("Spawn script : "+ GameManagement.Instance.result);
+            Singleton.Instance.result = calcul.x * calcul.y;
+            Debug.Log("Spawn script : "+ Singleton.Instance.result);
 
             //  GameObject resultAllChild = Instantiate(input_text[0]) as GameObject;
             //  resultAllChild.transform.parent = EmptyGameObject.transform;

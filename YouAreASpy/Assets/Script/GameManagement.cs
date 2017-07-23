@@ -2,36 +2,28 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+public class Singleton : MonoBehaviour
+{
+    // This field can be accesed through our singleton instance,
+    // but it can't be set in the inspector, because we use lazy instantiation
+    public int number;
+    public System.Random rnd = new System.Random();
+    public int result;
 
-    public class GameManagement : MonoBehaviour
+    // Static singleton instance
+    private static Singleton instance;
+
+    // Static singleton property
+    public static Singleton Instance
     {
-        
-        private int score = 0;
-        public System.Random rnd = new System.Random();
-        private static GameManagement instance;
-        private GameManagement() { }
-        public int result;
-
-        //Getteur Setteur
-        public int Score
-        {
-            get { return score; }
-            set { score = value; }
-        }
-
-       
-
-        public static GameManagement Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                Debug.Log("dadad");
-                    instance = new GameManagement();
-                }
-                return instance;
-            }
-        }
-            
+        // Here we use the ?? operator, to return 'instance' if 'instance' does not equal null
+        // otherwise we assign instance to a new component and return that
+        get { return instance ?? (instance = new GameObject("Singleton").AddComponent<Singleton>()); }
     }
+
+    // Instance method, this method can be accesed through the singleton instance
+    public void DoSomeAwesomeStuff()
+    {
+        Debug.Log("I'm doing awesome stuff");
+    }
+}

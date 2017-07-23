@@ -15,17 +15,9 @@ public class Calcul {
 
         //TODO : GET what the teacher congif : 
         //If don't have config it is a random session
-         
-        this.x = GameManagement.Instance.rnd.Next(0, 9);
-        this.y = GameManagement.Instance.rnd.Next(0, 9);
-    }
-
-    //Calcule l'opération et retourne le bon ou le mauvais résultats en fonction du besoin
-    public void doCalcul(int x, int y)
-    {
-
-        
-        
+        Debug.Log(Singleton.Instance);          
+        this.x = Singleton.Instance.rnd.Next(0, 9);
+        this.y = Singleton.Instance.rnd.Next(0, 9);
     }
 
 }

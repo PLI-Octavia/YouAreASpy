@@ -17,9 +17,9 @@ public class GetandSetText : MonoBehaviour {
         int resultCast = Int32.Parse(resulttexte.text);
         resultT.text = "Your resul is : " + resulttexte.text + " ! ";
        
-        Debug.Log("instance : "+ GameManagement.Instance.result);
+        Debug.Log("instance : "+ Singleton.Instance.result);
 
-        if (resultCast == GameManagement.Instance.result)
+        if (resultCast == Singleton.Instance.result)
         {
             resultT.text = "ok";
         }
