@@ -21,9 +21,4 @@ public class Singleton : MonoBehaviour
         get { return instance ?? (instance = new GameObject("Singleton").AddComponent<Singleton>()); }
     }
 
-    // Instance method, this method can be accesed through the singleton instance
-    public void DoSomeAwesomeStuff()
-    {
-        Debug.Log("I'm doing awesome stuff");
-    }
 }

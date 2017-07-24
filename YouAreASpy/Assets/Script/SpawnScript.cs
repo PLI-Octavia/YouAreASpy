@@ -61,7 +61,6 @@ public class SpawnScript : MonoBehaviour {
 
             
             Singleton.Instance.result = calcul.x * calcul.y;
-            Debug.Log("Spawn script : "+ Singleton.Instance.result);
 
             //  GameObject resultAllChild = Instantiate(input_text[0]) as GameObject;
             //  resultAllChild.transform.parent = EmptyGameObject.transform;

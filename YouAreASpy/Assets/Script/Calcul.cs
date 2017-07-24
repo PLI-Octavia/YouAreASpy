@@ -14,8 +14,7 @@ public class Calcul {
         //System.Random rnd = new System.Random();
 
         //TODO : GET what the teacher congif : 
-        //If don't have config it is a random session
-        Debug.Log(Singleton.Instance);          
+        //If don't have config it is a random session         
         this.x = Singleton.Instance.rnd.Next(0, 9);
         this.y = Singleton.Instance.rnd.Next(0, 9);
     }
