@@ -14,26 +14,24 @@ public class SpawnScript : MonoBehaviour {
     private GameObject EmptyGameObject;
     private AudioSource audio;
     private int nbCalcule;
-    private bool calculInProgress;
 
     void Start()
     {
-        this.calculInProgress = false;
-        
-        audio = GetComponent<AudioSource>();
+		Singleton.Instance.calculInProgress = false;
+		audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // Debug.Log(getandset.setget());
-        if (!calculInProgress)
+		
+        if (!Singleton.Instance.calculInProgress)
         {
-            this.calculInProgress = true;
-            //On génère l'objet vide qui va contenir le calcul et on attribue tout ce dont on aura besoin
-            this.EmptyGameObject = new GameObject();
-            EmptyGameObject.transform.position = new Vector3(-5, 4, 0);
+			Singleton.Instance.calculInProgress = true;
+			//On génère l'objet vide qui va contenir le calcul et on attribue tout ce dont on aura besoin
+			this.EmptyGameObject = new GameObject();
+			this.EmptyGameObject.tag = "calc";
+			EmptyGameObject.transform.position = new Vector3(-5, 4, 0);
 
             //On génère le calcul
             this.calcul = new Calcul();
