@@ -54,6 +54,7 @@
      <Compile Include="Assets\Script\Calcul.cs" />
      <Compile Include="Assets\Script\GameManagement.cs" />
      <Compile Include="Assets\Script\GetandSetText.cs" />
+     <Compile Include="Assets\Script\Menu.cs" />
      <Compile Include="Assets\Script\SpawnScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
