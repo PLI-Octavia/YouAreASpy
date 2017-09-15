@@ -12,13 +12,11 @@ public class SpawnScript : MonoBehaviour {
     public GameObject[] Input_result;
     //  public GameObject[] input_text;
     private GameObject EmptyGameObject;
-    private AudioSource audio;
     private int nbCalcule;
 
     void Start()
     {
 		Singleton.Instance.calculInProgress = false;
-		audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
