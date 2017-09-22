@@ -10,12 +10,13 @@ public class GetandSetText : MonoBehaviour {
     public Text resultT;
 	public Text Score;
     public ParticleSystem explosion;
+
     public void setget()
     {
 		int resultCast = Int32.Parse(resulttexte.text);
         resultT.text = "Your result is : " + resulttexte.text + " ! ";
-		
-		Debug.Log("debut "+ Singleton.Instance.score);
+        resulttexte.text = "";
+
 		if (resultCast == Singleton.Instance.result)
         {
 			Singleton.Instance.score += 10;
@@ -28,13 +29,13 @@ public class GetandSetText : MonoBehaviour {
         else
         {
 			Singleton.Instance.life -= 1;
-			Debug.Log(Singleton.Instance.life);
 			if (Singleton.Instance.life <= 0)
 			{
 				Destroy(GameObject.FindWithTag("bomb"));
 				Destroy(GameObject.FindWithTag("flamme"));
 				Destroy(GameObject.FindWithTag("calc"));
-				resultT.text = "Game Over"+" your score : " + Singleton.Instance.score.ToString();
+                Debug.Log(Singleton.Instance.score.ToString());
+				resultT.text = "Game Over "+"  your score : " + Singleton.Instance.score.ToString();
 				GameObject.Instantiate(this.explosion, new Vector3(0, -1, 0), Quaternion.Euler(-90, 0, 0));
 				explosion.Play();
 			}
